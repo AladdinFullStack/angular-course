@@ -1,0 +1,26 @@
+
+<h1>Select env to deploy</h1>
+<select class="browser-default custom-select" [(ngModel)]="envSelected">
+  <option value="dev" selected>dev</option>
+  <option value="qat">qat</option>
+  <option value="uat">uat</option>
+  <option value="prod">prod</option>
+</select>
+
+<div class="selection" *ngIf="envSelected === 'dev'">dev selected</div>
+<div class="selection" *ngIf="envSelected === 'qat'">qat selected</div>
+<div class="selection" *ngIf="envSelected === 'uat'">uat selected</div>
+<div class="selection" *ngIf="envSelected === 'prod'">prod selected</div>
+
+<div class="selection" *ngIf="envSelected">
+  <h1>choose blue green</h1>
+
+  <select class="browser-default custom-select" [(ngModel)]="selectedValue">
+    <option value="blue" selected>dev</option>
+    <option value="green">qat</option>
+  </select>
+
+  <div class="selection" *ngIf="selectedValue === 'blue'">blue selected</div>
+  <div class="selection" *ngIf="selectedValue === 'green'">green selected</div>
+
+</div>
