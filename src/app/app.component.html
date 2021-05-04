@@ -6,9 +6,15 @@
 </div>
 
 <div class="courses">
-  <course-card *ngFor="let course of courses"
+  <course-card *ngFor="let course of courses; index as i;
+                    first as isFirst;last as isLast;
+                    even as isEven; odd as id Odd"
+               [class.is-first]="isFirst"
+               [class.is-last]="isLast"
+               [class.is-even]="isEven"
+               [class.is-odd]="isOdd"
                (courseSelected)="onCourseSelected($event)"
-               [course]="course"></course-card>
+               [course]="course" [cardIndex]="i + 1"></course-card>
 
 </div>
 
