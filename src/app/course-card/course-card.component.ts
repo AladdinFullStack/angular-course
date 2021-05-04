@@ -32,4 +32,23 @@ export class CourseCardComponent implements OnInit {
     this.courseEmitter.emit(this.course);
 
   }
+
+  cardClasses() {
+    if (this.course.category == 'BEGINNER') {
+      return ['beginner']; // Array is returned in this case.
+      //Or you can return string 'beginner'.
+
+    }
+//     return {
+//       'beginner': this.course.category == 'BEGINNER',
+//     }
+  }
+
+   cardStyle() {
+//      return {'text-decoration': 'underline'};
+          return {
+          'background-image': 'url(' + this.course.iconUrl + ')'
+          };
+   }
+
 }
