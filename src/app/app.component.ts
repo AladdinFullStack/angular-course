@@ -31,4 +31,11 @@ export class AppComponent implements OnInit {
         //courses => this.courses = courses
       //);
   }
+
+  save(course:Course) {
+    this.coursesService.saveCourse(course)
+      .subscribe(
+        () => console.log('Course Saved!')
+      );
+  }
 }
